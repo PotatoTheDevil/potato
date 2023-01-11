@@ -3,6 +3,39 @@
 <link href="index.css" rel="stylesheet">
 <div class="wrapper"></div>
 <body  meta name="viewport" http-equiv="X-UA-Compatible" content="width=device-width, initial-scale=1, maximum-scale=1" style="font-family:arial">
-<p class="center1">get rickrolled bozo >:)</p> 
-<iframe id="video" class="center" width="800" height="500" src="https://www.youtube.com/embed/O91DT1pR1ew?autoplay=1" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+<center><p class="center1">get rickrolled bozo >:)</p> </center>
+<!-- 1. The <iframe> (video player) will replace this <div> tag. -->
+<div class="iframe-container">
+  <div id="player"></div>
+</div>
+<script>
+  // 2. This code loads the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // 3. This function creates an <iframe> (and YouTube player)
+  //    after the API code downloads.
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      width: '100%',
+      videoId: 'O91DT1pR1ew',
+      playerVars: { 'autoplay': 1, 'playsinline': 1 },
+      events: {
+        'onReady': onPlayerReady
+      }
+    });
+  }
+
+  // 4. The API will call this function when the video player is ready.
+  function onPlayerReady(event) {
+     event.target.mute();
+    event.target.playVideo();
+  }
+</script>
+
+
 </body>
