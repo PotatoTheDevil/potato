@@ -10,7 +10,15 @@
 
  @font-face {
   font-family: 'Minecraftia';
-  src: url('Minecraftia-Regular.otf');
+	src: url('Minecraft-Regular.eot');
+	 src: url('Minecraft-Regular.eot?#iefix') format('embedded-opentype'),
+		url('Minecraft-Regular.woff2') format('woff2'),
+		url('Minecraft-Regular.woff') format('woff'),
+		url('Minecraft-Regular.ttf') format('truetype'),
+		url('Minecraft-Regular.svg#Minecraft-Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 
 
